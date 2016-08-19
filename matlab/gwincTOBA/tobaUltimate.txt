@@ -1,0 +1,217 @@
+Torsion Suspension
+ - torsion wire diameter (single wire): 4570.4632 um
+ - torsion spring constant (single wire): 0.33843 Nm/rad
+ - torsion bar inertia: 97556.9239kg*m^2
+ - torsion resonance: 0.00029643 Hz
+You are not injecting squeezing..loozer!
+Laser Power:               0.50 Watt
+SRM Detuning:              0.00 degree
+SRM transmission:          0.1000
+ITM transmission:          0.0200
+PRM transmission:          0.0300
+Finesse:                 313.85
+Power Recycling Factor:   94.74
+Arm power:                 4.73 kW
+Power on beam splitter:   47.37 W
+Thermal load on ITM:       0.002 W
+Thermal load on BS:        0.000 W
+Reqired TCS efficiency:    1.000(estimate, see IFOModel.m for definition)
+BNS Inspiral Range:       0.694 Mpc
+BBH Inspiral Range:       9.105 Mpc
+Stochastic Omega: 2e-07 Universes
+ 
+New Nebulous Range:     774.523 Mpc
+  
+Bar length and diameter: 10 m x 0.8 m.
+Bar mass: 11707 kg
+Bar and Suspension temperature: 20 K and 20 K.
+Torsion Suspension
+ - torsion wire diameter (single wire): 4570.4632 um
+ - torsion spring constant (single wire): 0.33843 Nm/rad
+ - torsion bar inertia: 97556.9239kg*m^2
+ - torsion resonance: 0.00029643 Hz
+You are not injecting squeezing..loozer!
+Laser Power:               0.50 Watt
+SRM Detuning:              0.00 degree
+SRM transmission:          0.1000
+ITM transmission:          0.0200
+PRM transmission:          0.0300
+Finesse:                 313.85
+Power Recycling Factor:   94.74
+Arm power:                 4.73 kW
+Power on beam splitter:   47.37 W
+Thermal load on ITM:       0.002 W
+Thermal load on BS:        0.000 W
+Reqired TCS efficiency:    1.000(estimate, see IFOModel.m for definition)
+BNS Inspiral Range:       0.694 Mpc
+BBH Inspiral Range:       9.105 Mpc
+Stochastic Omega: 2e-07 Universes
+ 
+New Nebulous Range:     774.523 Mpc
+  
+Bar length and diameter: 10 m x 0.8 m.
+Bar mass: 11707 kg
+Bar and Suspension temperature: 20 K and 20 K.
+Torsion Suspension
+ - torsion wire diameter (single wire): 4570.4632 um
+ - torsion spring constant (single wire): 0.33843 Nm/rad
+ - torsion bar inertia: 97556.9239kg*m^2
+ - torsion resonance: 0.00029643 Hz
+You are not injecting squeezing..loozer!
+Laser Power:               0.50 Watt
+SRM Detuning:              0.00 degree
+SRM transmission:          0.1000
+ITM transmission:          0.0200
+PRM transmission:          0.0300
+Finesse:                 313.85
+Power Recycling Factor:   94.74
+Arm power:                 4.73 kW
+Power on beam splitter:   47.37 W
+Thermal load on ITM:       0.002 W
+Thermal load on BS:        0.000 W
+Reqired TCS efficiency:    1.000(estimate, see IFOModel.m for definition)
+BNS Inspiral Range:       0.694 Mpc
+BBH Inspiral Range:       9.105 Mpc
+Stochastic Omega: 2e-07 Universes
+ 
+New Nebulous Range:     774.523 Mpc
+  
+Bar length and diameter: 10 m x 0.8 m.
+Bar mass: 11707 kg
+Bar and Suspension temperature: 20 K and 20 K.
+Torsion Suspension
+ - torsion wire diameter (single wire): 4570.4632 um
+ - torsion spring constant (single wire): 0.33843 Nm/rad
+ - torsion bar inertia: 97556.9239kg*m^2
+ - torsion resonance: 0.00029643 Hz
+You are not injecting squeezing..loozer!
+Laser Power:               0.50 Watt
+SRM Detuning:              0.00 degree
+SRM transmission:          0.1000
+ITM transmission:          0.0200
+PRM transmission:          0.0300
+Finesse:                 313.85
+Power Recycling Factor:   94.74
+Arm power:                 4.73 kW
+Power on beam splitter:   47.37 W
+Thermal load on ITM:       0.002 W
+Thermal load on BS:        0.000 W
+Reqired TCS efficiency:    1.000(estimate, see IFOModel.m for definition)
+BNS Inspiral Range:       0.694 Mpc
+BBH Inspiral Range:       9.105 Mpc
+Stochastic Omega: 2e-07 Universes
+ 
+New Nebulous Range:     774.523 Mpc
+  
+Bar length and diameter: 10 m x 0.8 m.
+Bar mass: 11707 kg
+Bar and Suspension temperature: 20 K and 20 K.
+Torsion Suspension
+ - torsion wire diameter (single wire): 4570.4632 um
+ - torsion spring constant (single wire): 0.33843 Nm/rad
+ - torsion bar inertia: 97556.9239kg*m^2
+ - torsion resonance: 0.00029643 Hz
+You are not injecting squeezing..loozer!
+Laser Power:               0.50 Watt
+SRM Detuning:              0.00 degree
+SRM transmission:          0.1000
+ITM transmission:          0.0200
+PRM transmission:          0.0300
+Finesse:                 313.85
+Power Recycling Factor:   94.74
+Arm power:                 4.73 kW
+Power on beam splitter:   47.37 W
+Thermal load on ITM:       0.002 W
+Thermal load on BS:        0.000 W
+Reqired TCS efficiency:    1.000(estimate, see IFOModel.m for definition)
+BNS Inspiral Range:       0.694 Mpc
+BBH Inspiral Range:       9.105 Mpc
+Stochastic Omega: 2e-07 Universes
+ 
+New Nebulous Range:     774.523 Mpc
+  
+Bar length and diameter: 10 m x 0.8 m.
+Bar mass: 11707 kg
+Bar and Suspension temperature: 20 K and 20 K.
+Torsion Suspension
+ - torsion wire diameter (single wire): 4570.4632 um
+ - torsion spring constant (single wire): 0.33843 Nm/rad
+ - torsion bar inertia: 97556.9239kg*m^2
+ - torsion resonance: 0.00029643 Hz
+You are not injecting squeezing..loozer!
+Laser Power:               0.50 Watt
+SRM Detuning:              0.00 degree
+SRM transmission:          0.1000
+ITM transmission:          0.0200
+PRM transmission:          0.0300
+Finesse:                 313.85
+Power Recycling Factor:   94.74
+Arm power:                 4.73 kW
+Power on beam splitter:   47.37 W
+Thermal load on ITM:       0.002 W
+Thermal load on BS:        0.000 W
+Reqired TCS efficiency:    1.000(estimate, see IFOModel.m for definition)
+BNS Inspiral Range:       0.683 Mpc
+BBH Inspiral Range:       8.963 Mpc
+Stochastic Omega: 2e-07 Universes
+ 
+New Nebulous Range:     770.341 Mpc
+  
+Bar length and diameter: 10 m x 0.8 m.
+Bar mass: 11707 kg
+Bar and Suspension temperature: 20 K and 20 K.
+Torsion Suspension
+ - torsion wire diameter (single wire): 4570.4632 um
+ - torsion spring constant (single wire): 0.33843 Nm/rad
+ - torsion bar inertia: 97556.9239kg*m^2
+ - torsion resonance: 0.00029643 Hz
+You are not injecting squeezing..loozer!
+{??? Reference to non-existent field 'RefCav'.
+
+Error in ==> laserfrequency at 28
+  n = 4 * abs(Xp).^2 .* seis * (ifo.Infrastructure.Length/ifo.Infrastructure.RefCav)^2;
+
+Error in ==> gwinc at 175
+ y14 = laserfrequency(f, ifo);                 % calculates the laser frequency noise wrt the CM Arms
+
+Error in ==> nomm_Ultimate at 59
+[sss,nnn] = gwinc(f_LOLO,f_HIHI,ifo,SourceModel,3);
+} 
+uiopen('/Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/nomm_anu.m', true);
+% Modify expression to add input arguments.
+% Example:
+%   a = [1 2 3; 4 5 6]; 
+%   foo(a);
+
+nomm_Ultimate
+Torsion Suspension
+ - torsion wire diameter (single wire): 4570.4632 um
+ - torsion spring constant (single wire): 0.33843 Nm/rad
+ - torsion bar inertia: 97556.9239kg*m^2
+ - torsion resonance: 0.00029643 Hz
+You are not injecting squeezing..loozer!
+Laser Power:               0.50 Watt
+SRM Detuning:              0.00 degree
+SRM transmission:          0.1000
+ITM transmission:          0.0200
+PRM transmission:          0.0300
+{Warning: Ignoring extra legend entries.} 
+> In legend at 294
+  In gwinc at 250
+  In nomm_Ultimate at 62
+Finesse:                 313.85
+Power Recycling Factor:   94.74
+Arm power:                 4.73 kW
+Power on beam splitter:   47.37 W
+Thermal load on ITM:       0.002 W
+Thermal load on BS:        0.000 W
+Reqired TCS efficiency:    1.000(estimate, see IFOModel.m for definition)
+BNS Inspiral Range:       0.683 Mpc
+BBH Inspiral Range:       8.962 Mpc
+Stochastic Omega: 2e-07 Universes
+ 
+New Nebulous Range:     770.315 Mpc
+  
+Bar length and diameter: 10 m x 0.8 m.
+Bar mass: 11707 kg
+Bar and Suspension temperature: 20 K and 20 K.

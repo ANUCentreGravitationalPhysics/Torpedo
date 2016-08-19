@@ -1,0 +1,47 @@
+modematching = 0.64068
+ 
+ans = 
+ 
+    label              z (m)                type           parameters                    
+    -----              -----                ----           ----------                    
+    L1 - f=300         0.250000000000000    lens           focalLength: 0.300024464559749
+    EOM                0.530000000000000    flat mirror    none:                       
+    Wedge              0.680000000000000    flat mirror    none:                       
+    L2 - f~150mm       1.130000000000000    lens           focalLength: 0.149011409381047
+    AOM 1205C-843      1.322000000000000    flat mirror    none:                       
+    M1 - ROC=-200mm    1.522000000000000    lens           focalLength: 0.100000000000000
+
+
+ 
+modematching = 0.64068
+ 
+ans = 
+ 
+    label              z (m)                type           parameters                    
+    -----              -----                ----           ----------                    
+    Laser                              0    flat mirror    none:                       
+    L1 - f=300         0.250000000000000    lens           focalLength: 0.300024464559749
+    EOM                0.530000000000000    flat mirror    none:                       
+    Wedge              0.680000000000000    flat mirror    none:                       
+    L2 - f~150mm       1.130000000000000    lens           focalLength: 0.149011409381047
+    AOM 1205C-843      1.322000000000000    flat mirror    none:                       
+    M1 - ROC=-200mm    1.522000000000000    lens           focalLength: 0.100000000000000
+
+
+ 
+modematching = 0.64068
+ 
+ans = 
+ 
+    label              z (m)                type           parameters                    
+    -----              -----                ----           ----------                    
+    Laser                              0    flat mirror    none:                       
+    L1 - f=300         0.250000000000000    lens           focalLength: 0.300024464559749
+    EOM                0.530000000000000    flat mirror    none:                       
+    Wedge              0.680000000000000    flat mirror    none:                       
+    L2 - f~150mm       1.130000000000000    lens           focalLength: 0.149011409381047
+    AOM 1205C-843      1.322000000000000    flat mirror    none:                       
+    M1 - ROC=-200mm    1.522000000000000    lens           focalLength: 0.100000000000000
+
+
+ 

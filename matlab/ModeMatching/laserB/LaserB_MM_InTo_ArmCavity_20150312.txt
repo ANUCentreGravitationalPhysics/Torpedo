@@ -1,0 +1,18 @@
+modematching = 0.98994
+ 
+ans = 
+ 
+    label         z (m)                type           parameters                     
+    -----         -----                ----           ----------                     
+    Laser                         0    flat mirror    none:                        
+    L1 - f=265    0.290000000000000    lens           focalLength: 0.265020576131687 
+    EOM           1.020000000000000    flat mirror    none:                        
+    Wedge         1.170000000000000    flat mirror    none:                        
+    L3-f=265      1.548875161225702    lens           focalLength: 0.265020576131687 
+    L4-f=318      2.753016294294534    lens           focalLength: 0.317901234567901 
+    ITM           3.136000000000000    lens           focalLength: -0.514403292181070
+    W0            3.320000000000000    flat mirror    none:                        
+    ETM           3.504000000000000    lens           focalLength: -0.514403292181070
+
+
+ 

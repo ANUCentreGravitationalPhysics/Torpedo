@@ -1,0 +1,68 @@
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/SourceModel.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/SourceModel.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/TOBAModel.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/TOBAModel.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/TOBAModel.m~ and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/TOBAModel.m~ differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/TOBAModel_anu.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/TOBAModel_anu.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/gas.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/gas.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/gwinc.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/gwinc.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/gwinc.m~ and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/gwinc.m~ differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/nomm.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/nomm.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/nomm_Ultimate.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/nomm_Ultimate.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/nomm_anu.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/nomm_anu.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/nomm_anu.m~ and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/nomm_anu.m~ differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/seismic.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/seismic.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/seismic.m~ and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/seismic.m~ differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/subtoba.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/subtoba.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/subtoba.m~ and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/subtoba.m~ differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/suspTorsion.m and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/suspTorsion.m differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/suspTorsion.m~ and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/suspTorsion.m~ differ
+Files /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA/tobaanu.pdf and /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA/tobaanu.pdf differ
+Only in /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA: IFOModel.m~
+Only in /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA: TOBA.png
+Only in /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA: TOBAanu.png
+Only in /Users/slagmolen/Desktop/Dropbox/Mango/gwincTOBA: diffs.txt
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: gwinctoba.m
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: laserfrequency.m
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: nomm_Ultimate.m~
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: nomm_Ultimate2.m
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: nomm_Ultimate2.m~
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: nomm_anu_TOBA_tinyTorsion.m
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: nomm_anu_TOBA_tinyTorsion.m~
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: nomm_anu_tinyTorsion.m~
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tinyTorsionSteelWires.mat
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate.txt
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate2_all.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate2_details.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate2_noNN_all.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate2_noNN_details.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate2_noNN_plot.eps
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate2_noNN_plot.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate2_plot.eps
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaUltimate2_plot.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_10xNN_cancelation.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_2xmass_dumbbell_FT13.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_2xmass_dumbbell_FT13.txt
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_2xmass_dumbbell_FT13_wide.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_2xmass_dumbbell_FT13_wide.txt
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_2xmass_dumbbell_PD14_wide.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_2xmass_dumbbell_PD14_wide.txt
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_noSR.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_noSR_18cm_bars.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_noSR_18cm_bars_FT13.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_noSR_20cm_bars.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_noSR_2xmass_FT13.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_noSR_2xmass_FT13.txt
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_noSR_2xmass_dummy_FT13.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_noSR_2xmass_dummy_FT13.txt
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobaanu_tiny_bars.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobacav.m
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobacav.m~
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: tobeUltimate2_paper.zip
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: torsion_silica_18cm_bars_DP14.jpg
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: torsion_silica_18cm_bars_DP14.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: torsion_silica_18cm_bars_DP14.txt
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: torsion_silica_18cm_bars_wC70Steel_DP14.jpg
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: torsion_silica_18cm_bars_wC70Steel_DP14.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: torsion_silica_18cm_bars_wC70Steel_DP14.txt
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: torsion_silica_18cm_bars_wC70Steel_DP14_v2.pdf
+Only in /Users/slagmolen/Documents/ANU-MANGO/matlab/Mango/gwincTOBA: torsion_silica_18cm_bars_wC70Steel_DP14_v2.txt

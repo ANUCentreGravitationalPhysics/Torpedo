@@ -1,0 +1,80 @@
+modematching = 0.88335
+ 
+ans = 
+ 
+    label           z (m)                type           parameters                     
+    -----           -----                ----           ----------                     
+    L1 - f=300      0.250000000000000    lens           focalLength: 0.300024464559749 
+    EOM             0.530000000000000    flat mirror    none:                        
+    Wedge           0.680000000000000    flat mirror    none:                        
+    L3 - f~500mm    1.633674354984189    lens           focalLength: 0.499966639236706 
+    ITM             2.346000000000000    lens           focalLength: -0.556012721571070
+    W0              2.530000000000000    flat mirror    none:                        
+    ETM             2.714000000000000    lens           focalLength: -0.556012721571070
+
+
+ 
+modematching = 0.26957
+ 
+ans = 
+ 
+    label           z (m)                type           parameters                     
+    -----           -----                ----           ----------                     
+    L1 - f=300      0.250000000000000    lens           focalLength: 0.300024464559749 
+    EOM             0.530000000000000    flat mirror    none:                        
+    Wedge           0.680000000000000    flat mirror    none:                        
+    L3 - f~500mm    1.531732464912223    lens           focalLength: 0.599826524030870 
+    ITM             2.346000000000000    lens           focalLength: -0.556012721571070
+    W0              2.530000000000000    flat mirror    none:                        
+    ETM             2.714000000000000    lens           focalLength: -0.556012721571070
+
+
+ 
+modematching = 0.86742
+ 
+ans = 
+ 
+    label           z (m)                type           parameters                     
+    -----           -----                ----           ----------                     
+    L1 - f=300      0.250000000000000    lens           focalLength: 0.300024464559749 
+    EOM             0.530000000000000    flat mirror    none:                        
+    Wedge           0.680000000000000    flat mirror    none:                        
+    L3 - f~500mm    1.935395425066268    lens           focalLength: 0.399884349353913 
+    ITM             2.346000000000000    lens           focalLength: -0.556012721571070
+    W0              2.530000000000000    flat mirror    none:                        
+    ETM             2.714000000000000    lens           focalLength: -0.556012721571070
+
+
+ 
+modematching = 0.88335
+ 
+ans = 
+ 
+    label           z (m)                type           parameters                     
+    -----           -----                ----           ----------                     
+    L1 - f=300      0.250000000000000    lens           focalLength: 0.300024464559749 
+    EOM             0.530000000000000    flat mirror    none:                        
+    Wedge           0.680000000000000    flat mirror    none:                        
+    L3 - f~500mm    1.633674354984189    lens           focalLength: 0.499966639236706 
+    ITM             2.346000000000000    lens           focalLength: -0.556012721571070
+    W0              2.530000000000000    flat mirror    none:                        
+    ETM             2.714000000000000    lens           focalLength: -0.556012721571070
+
+
+ 
+modematching = 0.88335
+ 
+ans = 
+ 
+    label           z (m)                type           parameters                     
+    -----           -----                ----           ----------                     
+    L1 - f=300      0.250000000000000    lens           focalLength: 0.300024464559749 
+    EOM             0.530000000000000    flat mirror    none:                        
+    Wedge           0.680000000000000    flat mirror    none:                        
+    L3 - f~500mm    1.633674354984189    lens           focalLength: 0.499966639236706 
+    ITM             2.346000000000000    lens           focalLength: -0.556012721571070
+    W0              2.530000000000000    flat mirror    none:                        
+    ETM             2.714000000000000    lens           focalLength: -0.556012721571070
+
+
+ 

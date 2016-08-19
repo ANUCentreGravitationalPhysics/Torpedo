@@ -1,0 +1,271 @@
+% This Script aims to simulate the transferfunction within the toba of one
+% quantity to another for all dimensions within the lab plane.
+
+%%
+%{
+Author: Perry William Forsyth
+Contact: u5024171@anu.edu.au
+Date: 2016_03_30 (YYYY_MM_DD)
+Version: 4.S
+Note: Complex TOBA model
+%}
+
+%% Basic Workspace Cleaning Tools
+close all;
+clear all;
+
+%% Saving the data structure into a .mat file
+SaveStructure = 1;
+SaveFigure = 0;
+
+%% Run the Mathmatica Script to generate transfer functions
+% fileNameDesignator = 'Tungsten2um';
+fileNameDesignator = 'FusedSilica2um';
+
+TOBAV9SimData = TOBALoadValsV9(['SweepValuesUsedRe' fileNameDesignator '.dat'], ...
+                               ['SweepValuesUsedIm' fileNameDesignator '.dat']);
+TOBAV9SimData.Freq = dlmread('FreqSweep.dat');
+
+% The Bar 1 & Bar 2 Trans are complex but saved in two files 
+Bar1TransRe = dlmread(['SweepBar1Re' fileNameDesignator '.dat']);
+Bar1TransIm = dlmread(['SweepBar1Im'  fileNameDesignator '.dat']);
+Bar1Trans = Bar1TransRe + 1i.*Bar1TransIm;
+
+Bar2TransRe = dlmread(['SweepBar2Re' fileNameDesignator '.dat']);
+Bar2TransIm = dlmread(['SweepBar2Im' fileNameDesignator '.dat']);
+Bar2Trans = Bar2TransRe + 1i.*Bar2TransIm;
+
+
+%% Making basic ground motion profiles
+LowPassCutoff = 1; %Hz
+LowPassProfile = 1./(1+sqrt(-1).*(TOBAV9SimData.Freq')./(LowPassCutoff));
+GMLinearAmp = 10^-6;
+GMRotationalAmp = 10^-6/10;
+
+GMLinear = LowPassProfile*GMLinearAmp;
+GMRotation = LowPassProfile*GMRotationalAmp;
+
+% Target Sensitivity
+SensTarget = 10^-15;
+
+% Parameters
+g = 9.806;
+deltax = TOBAV9SimData.Bar(1).CoMError(1);
+deltay = TOBAV9SimData.Bar(1).CoMError(2);
+deltaz = TOBAV9SimData.Bar(1).CoMError(3);
+
+% Controls
+BarsCross = true;
+
+% Division of the two Transfer Sweep Matrix
+BarTransferSweep = {Bar1Trans, Bar2Trans};
+BarModes = {'Yaw';'Pitch';'Roll';'Translation';'Longitudinal';'Verticle'};
+InputModes = {'MotionInX'; 'MotionInY'; 'MotionInZ';...
+    'SuspensionRoll'; 'SuspensionPitch'; 'SuspensionYaw'; 'WireTorqueX';...
+    'WireTorqueY'; 'BarTorqueX'; 'BarTorqueY'; 'BarTorqueZ';...
+    'ForceX'; 'ForceY'; 'ForceZ'};
+
+IDoFRange = 1:length(InputModes);
+for BarNum = 1:length(BarTransferSweep)
+    % For Each Bar
+    BarSweepData = BarTransferSweep{BarNum};
+    BarModesData = cell(length(BarModes),1);
+    for j = 1:length(BarModes)
+        % For each degree of freedom for the bar
+        DoFName = BarModes{j};
+        BarModesData = BarSweepData(IDoFRange+(j-1)*length(InputModes),:);
+        for k = 1:length(InputModes)
+            % For each mode that can be injected into the bar
+            InputName = InputModes{k};
+            ModeData = BarModesData(k,:);
+            TOBAV9SimData.Bar(BarNum).(DoFName).(InputName) = ModeData';
+        end
+    end
+
+end
+
+%% Saving the data structure into a .mat file
+if SaveStructure
+    Experiament = TOBAV9SimData;
+    disp(['saving TorpedoV9' fileNameDesignator '.mat']);
+    save(['TorpedoV9' fileNameDesignator '.mat'],'Experiament');
+end
+
+%% Plotting
+% Plotting the effects on Yaw
+fig(1) = figure(1);
+TargetBars = [1,2]; % Which Bar number
+TargetBarMode = {'Yaw','Longitudinal'}; % Which Motion of the bar
+TargetInputMode = {'BarTorque'}; % Which driver of that Motion
+[XData, XDataNames] = TOBADataSelectorV8(TargetBars,TargetBarMode,TargetInputMode,TOBAV9SimData.Bar);
+% subplot(2,1,1)
+semilogx(TOBAV9SimData.Freq, real(20.*log10(abs(XData))), 'LineWidth',3)
+title({[TargetInputMode{1} ,' to ', TargetBarMode{1}, ', with \DeltaS_{COM} = [ ',...
+    num2str(deltax*1e6),'\mum ,',num2str(deltay*1e6),'\mum ,',num2str(deltaz*1e3),'mm ]'],...
+    '(X is along the length of Bar 1, orthogonal to Bar 2)'},'fontweight','bold')
+set(gca, 'FontSize', 16)
+xlabel('Frequency - [Hz]', 'FontSize', 20)
+ylabel('Response - [dB]', 'FontSize', 20)
+grid on
+axis([1e-3, TOBAV9SimData.Freq(end) -120 100])
+LegendHandle = legend(XDataNames, 'Location', 'NorthEast');
+set(LegendHandle,'FontSize',14);
+set(gca,'LineWidth',2,'FontWeight','bold','FontName','Helvetica','FontSize',20);
+set(get(gca, 'xlabel'),'FontWeight','bold','FontName','Helvetica','FontSize',20);
+set(get(gca, 'ylabel'),'FontWeight','bold','FontName','Helvetica','FontSize',20);
+if SaveFigure
+    figHdl = fig(1);
+    orient landscape;
+    figHdl.PaperUnits = 'inches';
+    figHdl.PaperPosition = 2.5*[0 0 4 3];
+    figHdl.PaperPositionMode = 'manual';
+    % set(gcf,'PaperPositionMode','auto');
+    fileName = ['aoutput/' 'BarTorque2YLampl'];
+    print(gcf, '-depsc2', '-loose', [fileName '.eps']);
+    system(['pstopdf ' fileName '.eps ' fileName '.pdf']);
+end
+
+fig(5) = figure(7);
+subplot(2,1,2)
+semilogx(TOBAV9SimData.Freq, angle(XData)*(180/pi), 'LineWidth',2)
+xlabel('Frequency - [Hz]', 'FontSize', 20)
+ylabel('Phase - [Rad]', 'FontSize', 20)
+grid on
+set(gca,'LineWidth',2,'FontWeight','bold','FontName','Helvetica','FontSize',20);
+set(get(gca, 'xlabel'),'FontWeight','bold','FontName','Helvetica','FontSize',20);
+set(get(gca, 'ylabel'),'FontWeight','bold','FontName','Helvetica','FontSize',20);
+if SaveFigure
+    figHdl = fig(5);
+    orient landscape;
+    figHdl.PaperUnits = 'inches';
+    figHdl.PaperPosition = 2.5*[0 0 4 3];
+    figHdl.PaperPositionMode = 'manual';
+    % set(gcf,'PaperPositionMode','auto');
+    fileName = ['aoutput/' 'BarTorque2YLphase'];
+    print(gcf, '-depsc2', '-loose', [fileName '.eps']);
+    system(['pstopdf ' fileName '.eps ' fileName '.pdf']);
+end
+
+
+if BarsCross
+    % Differential due to Linear
+    fig(2) = figure(2);
+    [Bar1YawData, Bar1YawDataNames] = TOBADataSelectorV8([1],{'Yaw'},{'Linear'},TOBAV9SimData.Bar,BarsCross);
+    [Bar2YawData, Bar2YawDataNames] = TOBADataSelectorV8([2],{'Yaw'},{'Linear'},TOBAV9SimData.Bar,BarsCross);
+    DifferentialData = Bar1YawData - Bar2YawData;
+    semilogx(TOBAV9SimData.Freq, real(20.*log10(abs(DifferentialData))), 'LineWidth',3)
+    title({['Linear Motion to Diff Yaw, with \DeltaS_{COM} = [ ',...
+        num2str(deltax*1e6),'\mum ,',num2str(deltay*1e6),'\mum ,',num2str(deltaz*1e3),'mm ]'],...
+        '(X is along the length of Bar 1, orthogonal to Bar 2)'},'fontweight','bold')
+    set(gca, 'FontSize', 16)
+    xlabel('Frequency - [Hz]', 'FontSize', 20)
+    ylabel('Diff Response - [dB, rad/m]', 'FontSize', 20)
+    grid on
+    axis([1e-3, TOBAV9SimData.Freq(end) -150 30])
+    LegendHandle = legend({'MotionInX'; 'MotionInY'; 'MotionInZ'}, 'Location', 'NorthEast');
+    set(LegendHandle,'FontSize',16);
+    set(gca,'LineWidth',2,'FontWeight','bold','FontName','Helvetica','FontSize',20);
+    set(get(gca, 'xlabel'),'FontWeight','bold','FontName','Helvetica','FontSize',20);
+    set(get(gca, 'ylabel'),'FontWeight','bold','FontName','Helvetica','FontSize',20);
+    if SaveFigure
+        figHdl = fig(2);
+        orient landscape;
+        figHdl.PaperUnits = 'inches';
+        figHdl.PaperPosition = 2.5*[0 0 4 3];
+        figHdl.PaperPositionMode = 'manual';
+        % set(gcf,'PaperPositionMode','auto');
+        fileName = ['aoutput/' 'diffTF_LinDisp2Yaw'];
+        print(gcf, '-depsc2', '-loose', [fileName '.eps']);
+        system(['pstopdf ' fileName '.eps ' fileName '.pdf']);
+    end
+
+    
+    % Differential due to Rotation
+    fig(3) = figure(3);
+    [Bar1YawData, Bar1YawDataNames] = TOBADataSelectorV8([1],{'Yaw'},{'Rotation'},TOBAV9SimData.Bar,BarsCross);
+    [Bar2YawData, Bar2YawDataNames] = TOBADataSelectorV8([2],{'Yaw'},{'Rotation'},TOBAV9SimData.Bar,BarsCross);
+    DifferentialData = Bar1YawData - Bar2YawData;
+    semilogx(TOBAV9SimData.Freq, real(20.*log10(abs(DifferentialData))), 'LineWidth',3)
+    title({['Differential TF: Suspension Rotation to Yaw, with \DeltaS_{COM} = [ ',...
+        num2str(deltax*1e6),'\mum ,',num2str(deltay*1e6),'\mum ,',num2str(deltaz*1e3),'mm ]'],...
+        '(X is along the length of Bar 1, orthogonal to Bar 2)'},'fontweight','bold')
+    set(gca, 'FontSize', 16)
+    xlabel('Frequency - [Hz]', 'FontSize', 20)
+    ylabel('Response - Rad/(N*M)[dB]', 'FontSize', 20)
+    grid on
+    axis([1e-3, TOBAV9SimData.Freq(end) -120 65])
+    LegendHandle = legend({'SuspensionRoll'; 'SuspensionPitch'; 'SuspensionYaw'}, 'Location', 'NorthEast');
+    set(LegendHandle,'FontSize',16);
+    set(gca,'LineWidth',2,'FontWeight','bold','FontName','Helvetica','FontSize',20);
+    set(get(gca, 'xlabel'),'FontWeight','bold','FontName','Helvetica','FontSize',20);
+    set(get(gca, 'ylabel'),'FontWeight','bold','FontName','Helvetica','FontSize',20);
+    if SaveFigure
+        figHdl = fig(3);
+        orient landscape;
+        figHdl.PaperUnits = 'inches';
+        figHdl.PaperPosition = 2.5*[0 0 4 3];
+        figHdl.PaperPositionMode = 'manual';
+        % set(gcf,'PaperPositionMode','auto');
+        fileName = ['aoutput/' 'diffTF_Rotate2Yaw'];
+        print(gcf, '-depsc2', '-loose', [fileName '.eps']);
+        system(['pstopdf ' fileName '.eps ' fileName '.pdf']);
+    end
+    
+    %% Differential Yaw due to 1 micro ground motion
+    fig(4) = figure(5);
+    % Linear Motion
+    [Bar1YawData, Bar1YawDataNames] = TOBADataSelectorV8([1],{'Yaw'},{'Linear'},TOBAV9SimData.Bar,BarsCross);
+    [Bar2YawData, Bar2YawDataNames] = TOBADataSelectorV8([2],{'Yaw'},{'Linear'},TOBAV9SimData.Bar,BarsCross);
+    LGMNoise = abs((Bar1YawData - Bar2YawData).*repmat(GMLinear,size(Bar1YawData,1),1));
+    % Rotational
+    [Bar1YawData, Bar1YawDataNames] = TOBADataSelectorV8([1],{'Yaw'},{'Rotation'},TOBAV9SimData.Bar,BarsCross);
+    [Bar2YawData, Bar2YawDataNames] = TOBADataSelectorV8([2],{'Yaw'},{'Rotation'},TOBAV9SimData.Bar,BarsCross);
+    RGMNoise = abs((Bar1YawData - Bar2YawData).*repmat(GMRotation,size(Bar1YawData,1),1));
+    % Combined Error
+    TotalGMError = sqrt(sum(RGMNoise.^2+LGMNoise.^2));
+    GMNoiseMatrix = [LGMNoise;RGMNoise];
+    % Plotting
+    loglog(TOBAV9SimData.Freq, LGMNoise, TOBAV9SimData.Freq, RGMNoise,TOBAV9SimData.Freq, TotalGMError,'--','LineWidth',2)
+    title({['1 Micron Linear Ground Motion and 0.1 Microradians Rotational Ground Motion to Yaw, with \DeltaS_{COM} = [ ',...
+        num2str(deltax*1e6),'\mum ,',num2str(deltay*1e6),'\mum ,',num2str(deltaz*1e3),'mm ]'],...
+        '(X is along the length of Bar 1, orthogonal to Bar 2)'},'fontweight','bold')
+    set(gca, 'FontSize', 16)
+    xlabel('Frequency - [Hz]', 'FontSize', 20)
+    ylabel('Yaw Noise - [Rad/sqrt(Hz)]', 'FontSize', 20)
+    grid on
+    %axis([1e-3, TOBAV9SimData.Freq(end) 10^(-15) 1])
+    LegendHandle = legend({'Motion In X'; 'Motion In Y'; 'Motion In Z';'SP Roll'; 'SP Pitch'; 'SP Yaw'; 'Total Error'}, 'Location', 'NorthEast');
+    set(LegendHandle,'FontSize',9);
+    
+    %% Suspension Point Profile requirements
+    fig(4) = figure(6);
+    % Making values into requirements
+    RequireTFGM = real(20.*log10(abs(SensTarget./GMNoiseMatrix)));
+    RequireTFGM(RequireTFGM>0) = 0;
+    TotalReqTFGM = real(20.*log10(abs(SensTarget./TotalGMError)));
+    TotalReqTFGM(TotalReqTFGM>0) = 0;
+    % Plotting
+    semilogx(TOBAV9SimData.Freq, RequireTFGM, TOBAV9SimData.Freq, TotalReqTFGM,'--','LineWidth',2)
+    title({['TF required for Isolation System to reach',num2str(SensTarget),' rad, with \DeltaS_{COM} = [ ',...
+        num2str(deltax*1e6),'\mum ,',num2str(deltay*1e6),'\mum ,',num2str(deltaz*1e3),'mm ]'],...
+        '(X is along the length of Bar 1, orthogonal to Bar 2)'},'fontweight','bold')
+    set(gca, 'FontSize', 16)
+    xlabel('Frequency - [Hz]', 'FontSize', 20)
+    ylabel('Response - [dB]', 'FontSize', 20)
+    grid on
+    %axis([1e-3, TOBAV9SimData.Freq(end) -200 0])
+    LegendHandle = legend({'Motion In X'; 'Motion In Y'; 'Motion In Z';'SP Roll'; 'SP Pitch'; 'SP Yaw'; 'Total Error'}, 'Location', 'SouthEast');
+    set(LegendHandle,'FontSize',9);
+    if SaveFigure
+        figHdl = fig(4);
+        orient landscape;
+        figHdl.PaperUnits = 'inches';
+        figHdl.PaperPosition = 2.5*[0 0 4 3];
+        figHdl.PaperPositionMode = 'manual';
+        % set(gcf,'PaperPositionMode','auto');
+        fileName = ['aoutput/' 'SuspensionPointRequirements'];
+        print(gcf, '-depsc2', '-loose', [fileName '.eps']);
+        system(['pstopdf ' fileName '.eps ' fileName '.pdf']);
+    end
+    
+end

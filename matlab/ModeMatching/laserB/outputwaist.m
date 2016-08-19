@@ -1,0 +1,1 @@
+% calculate the beam waist after going through a lens with focal length f%% input is distance from input waist (w1), w1 to lens (d1), focal length f,% lens to second waist (d2)w1 = 371e-6;		% fiber coupler output waistw2 = 170e-6;		% MC waistd1 = .370;f = .200;d2 = ((d1 - f)*w2^2 + f*w1^2) / w1^2;disp(['distance lens - waist [m]: ', num2str(d2,5)]);

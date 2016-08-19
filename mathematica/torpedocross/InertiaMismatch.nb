@@ -1,0 +1,359 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12706,        350]
+NotebookOptionsPosition[     11001,        292]
+NotebookOutlinePosition[     11354,        308]
+CellTagsIndexPosition[     11311,        305]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+In the LONG degree of freedom, the torsion beam can have a slight imbalance \
+of the inertia between the 'left' and the 'right' side. Although the beam \
+will still be \[OpenCurlyQuote]horisontal\[CloseCurlyQuote], there will be a \
+shift in the rotation axis as well.
+
+The moment of inertia is given as I = m R^2, which are equal between left and \
+right. The mass m and the radius R have a negative relationship to keep the \
+beam balanced. Increasing the Radius on one side, will increase the mass at \
+the other side.\
+\>", "Text",
+ CellChangeTimes->{{3.662002732791012*^9, 3.662002987273999*^9}, {
+   3.662003019008511*^9, 3.662003097509088*^9}, {3.66208141141371*^9, 
+   3.662081411973871*^9}, 3.662081713922059*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", "=", 
+    RowBox[{"13.6", "/", "2"}]}], ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "each", " ", "side", " ", "has", " ", "half", " ", "the", " ", "total", 
+     " ", "beam", " ", "mass"}], ",", " ", "kg"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dm", "=", "0.025"}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"additional", " ", "mass", " ", "on", " ", "one", " ", "side"}], 
+    ",", " ", "kg"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"R", "=", "0.25"}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "radius", " ", "of", " ", "the", " ", "mass", " ", "location", " ", 
+     "from", " ", "the", " ", "axis", " ", "of", " ", "rotation"}], ",", " ", 
+    "m"}], " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.661885674872087*^9, 3.661885714350535*^9}, {
+   3.6618858114940777`*^9, 3.6618858529532967`*^9}, {3.661885911736792*^9, 
+   3.661885921702814*^9}, {3.661886039308243*^9, 3.661886116439176*^9}, {
+   3.661886765528113*^9, 3.6618867676155977`*^9}, {3.661887529907496*^9, 
+   3.6618875409057693`*^9}, {3.661887888956156*^9, 3.661887893178578*^9}, {
+   3.661888301268303*^9, 3.661888333317778*^9}, {3.661893262053515*^9, 
+   3.661893262883193*^9}, {3.661893324267104*^9, 3.661893336472625*^9}, {
+   3.6620813801331797`*^9, 3.662081401170862*^9}, {3.662083003177459*^9, 
+   3.662083039246472*^9}, {3.662083100508068*^9, 3.662083160090186*^9}, {
+   3.6621729204041157`*^9, 3.662172930061632*^9}, 3.6621734525196543`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dRout", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"m", "*", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"R", "+", "dR"}], ")"}], "^", "2"}]}], " ", "==", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"m", "+", "dm"}], ")"}], "*", 
+      RowBox[{"R", "^", "2"}]}]}], ",", " ", "dR"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"dR", "\[Rule]", 
+     RowBox[{"-", "0.500459137209575`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"dR", "\[Rule]", "0.0004591372095749857`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.661886059674032*^9, 3.661886118094322*^9, 3.6618867689557047`*^9, 
+   3.6618868155857267`*^9, 3.661887542332272*^9, 3.661887893833948*^9, {
+   3.6618883073910913`*^9, 3.661888336819944*^9}, {3.661891633541152*^9, 
+   3.661891650561936*^9}, 3.661892184508103*^9, 3.661893264378667*^9, 
+   3.661893340853078*^9, 3.6621730991020613`*^9, {3.6621734577589893`*^9, 
+   3.662173483648656*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The negative value is not possible, so only the positive solution is kept.\
+\>", "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.6620818009047318`*^9, 3.662081834934125*^9}, {
+   3.6620819900625563`*^9, 3.6620819975507603`*^9}, 3.662173121457651*^9}],
+
+Cell[BoxData[
+ RowBox[{"dRR", "=", 
+  RowBox[{"dRout", "[", 
+   RowBox[{"[", "2", "]"}], "]"}]}]], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.6618878022234907`*^9, 3.66188783562755*^9}, {
+   3.661887867392186*^9, 3.661887985062653*^9}, {3.661888059312153*^9, 
+   3.661888083016982*^9}, {3.661891301998602*^9, 3.661891356965645*^9}, {
+   3.6618914061498613`*^9, 3.661891427499281*^9}, {3.661891610722103*^9, 
+   3.661891617752203*^9}, {3.6618916966344223`*^9, 3.661891710385461*^9}, 
+   3.6621731214580297`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"dR", "\[Rule]", "0.0004591372095749857`"}], "}"}]], "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{
+  3.6618878063650293`*^9, 3.661887836470001*^9, {3.661887869655257*^9, 
+   3.661887905983883*^9}, {3.661887936962223*^9, 3.661887952406918*^9}, 
+   3.661887987259158*^9, {3.661888061089035*^9, 3.661888073793891*^9}, {
+   3.6618913376319227`*^9, 3.661891357947022*^9}, 3.66189142789669*^9, 
+   3.6618916189208593`*^9, 3.661891653867564*^9, 3.661891711471161*^9, 
+   3.661892114649652*^9, 3.661892187860752*^9, 3.661893267070673*^9, 
+   3.6618933434416103`*^9, {3.6621731214585733`*^9, 3.662173123609737*^9}, {
+   3.6621734640173817`*^9, 3.662173486939353*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Get the numerical value of dR [m]:", "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{{3.662082565539063*^9, 3.6620825676604567`*^9}, {
+   3.662082650677606*^9, 3.662082672141611*^9}, {3.662172945649907*^9, 
+   3.6621729498245068`*^9}, 3.6621731368100243`*^9}],
+
+Cell[BoxData[
+ RowBox[{"out1", "=", 
+  RowBox[{"dR", "/.", "\[VeryThinSpace]", "dRR"}]}]], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{{3.6618921967904463`*^9, 3.661892198380859*^9}, 
+   3.66217313681047*^9},
+ NumberMarks->False],
+
+Cell[BoxData["0.0004591372095749857`"], "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{
+  3.6618921172711267`*^9, 3.661892200158407*^9, 3.661893270546719*^9, {
+   3.66217313681085*^9, 3.662173145771669*^9}, 3.662173494805808*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dR", "=", "out1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dmout", " ", "=", " ", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"m", "*", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"R", "+", "dR"}], ")"}], "^", "2"}]}], " ", "==", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"m", "+", "dmm"}], ")"}], "*", 
+      RowBox[{"R", "^", "2"}]}]}], ",", " ", "dmm"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.661886068272984*^9, 3.6618860687047777`*^9}, {
+   3.661886240251917*^9, 3.661886245243677*^9}, {3.661886666450507*^9, 
+   3.6618866672742023`*^9}, 3.661886711602333*^9, {3.661888040590293*^9, 
+   3.661888040684552*^9}, {3.6618914469602137`*^9, 3.6618914473989983`*^9}, 
+   3.661891705097803*^9, {3.661891768943742*^9, 3.661891799054134*^9}, 
+   3.661892104361882*^9, {3.6618921392892437`*^9, 3.6618921699462957`*^9}, {
+   3.661892210500517*^9, 3.661892218436121*^9}, {3.661892325134074*^9, 
+   3.661892327103881*^9}, {3.662173207745229*^9, 3.662173212699679*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"dmm", "\[Rule]", "0.024999999999999467`"}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.661891774568034*^9, 3.661891807225342*^9, {3.6618921083086653`*^9, 
+   3.66189214495131*^9}, 3.661892221911695*^9, 3.661892329446916*^9, 
+   3.661893272263404*^9, 3.661893347891468*^9, 3.662173159186676*^9, 
+   3.6621732160325737`*^9, 3.662173501417962*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"out2", "=", 
+  RowBox[{"dmm", "/.", 
+   RowBox[{"dmout", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.662173004617064*^9, 3.662173054438671*^9}}],
+
+Cell[BoxData["0.024999999999999467`"], "Output",
+ CellChangeTimes->{{3.66217302918336*^9, 3.662173055636923*^9}, 
+   3.662173171412087*^9, 3.662173222748979*^9, 3.6621735044779587`*^9}]
+}, Open  ]],
+
+Cell["Compute the ratios of the Radius and mass", "Text",
+ CellChangeTimes->{{3.6621736021046247`*^9, 3.662173635015602*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Rratio", "=", 
+  RowBox[{"R", "/", "out1"}]}], "\[IndentingNewLine]", 
+ RowBox[{"mratio", " ", "=", " ", 
+  RowBox[{"m", "/", "out2"}]}]}], "Input",
+ CellChangeTimes->{{3.661887123947974*^9, 3.6618871606244392`*^9}, {
+  3.661892447445223*^9, 3.6618924740018787`*^9}, {3.6618931988439083`*^9, 
+  3.6618932359481363`*^9}, {3.662173060637295*^9, 3.662173062052705*^9}}],
+
+Cell[BoxData["544.4995412840099`"], "Output",
+ CellChangeTimes->{3.661893210071854*^9, 3.661893243814508*^9, 
+  3.661893292883445*^9, 3.66189335248381*^9, 3.662173063427888*^9, 
+  3.662173258669957*^9, 3.662173506889763*^9}],
+
+Cell[BoxData["272.0000000000058`"], "Output",
+ CellChangeTimes->{3.661893210071854*^9, 3.661893243814508*^9, 
+  3.661893292883445*^9, 3.66189335248381*^9, 3.662173063427888*^9, 
+  3.662173258669957*^9, 3.662173506894958*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"M", "[", "R", "]"}], "==", 
+    RowBox[{"m", " ", 
+     SuperscriptBox["R", "2"]}]}], ",", 
+   RowBox[{"M", "[", "R", "]"}], ",", "R"}], "]"}]], "Input",
+ CellChangeTimes->{{3.662191561130219*^9, 3.662191601698143*^9}, {
+  3.662191631845207*^9, 3.662191632654644*^9}, {3.662191816409542*^9, 
+  3.66219181947157*^9}, {3.662191879958983*^9, 3.662191886060951*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"M", "[", "R", "]"}], "\[Rule]", 
+    RowBox[{"m", " ", 
+     SuperscriptBox["R", "2"]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.662191584216818*^9, 3.662191602761632*^9}, 
+   3.662191634149921*^9, 3.662191821066345*^9, 3.662191889384172*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DifferenceRoot", "[", 
+  RowBox[{"m", " ", 
+   SuperscriptBox["R", "2"]}], "]"}]], "Input",
+ CellChangeTimes->{{3.662191432959022*^9, 3.662191465517528*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"DifferenceRoot", "::", "pfn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(m\\\\ R\\^2\\)\[NoBreak] is not a pure \
+function. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/DifferenceRoot\\\", ButtonNote -> \
+\\\"DifferenceRoot::pfn\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.662191466510565*^9}],
+
+Cell[BoxData[
+ RowBox[{"DifferenceRoot", "[", 
+  RowBox[{"m", " ", 
+   SuperscriptBox["R", "2"]}], "]"}]], "Output",
+ CellChangeTimes->{{3.6621914374545527`*^9, 3.662191466514977*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 751},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"10.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 23, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 732, 13, 125, "Text"],
+Cell[1293, 35, 1554, 33, 80, "Input"],
+Cell[CellGroupData[{
+Cell[2872, 72, 371, 12, 28, "Input"],
+Cell[3246, 86, 658, 15, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3941, 106, 295, 5, 30, "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.}],
+Cell[4239, 113, 551, 10, 28, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.}],
+Cell[4793, 125, 734, 12, 28, "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.}]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5564, 142, 297, 4, 30, "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}],
+Cell[5864, 148, 266, 6, 28, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}],
+Cell[6133, 156, 264, 4, 28, "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6434, 165, 1043, 22, 46, "Input"],
+Cell[7480, 189, 410, 9, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7927, 203, 202, 5, 28, "Input"],
+Cell[8132, 210, 185, 2, 28, "Output"]
+}, Open  ]],
+Cell[8332, 215, 125, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[8482, 220, 391, 7, 46, "Input"],
+Cell[8876, 229, 224, 3, 28, "Output"],
+Cell[9103, 234, 224, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9364, 242, 437, 10, 35, InheritFromParent],
+Cell[9804, 254, 321, 8, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10162, 267, 181, 4, 35, InheritFromParent],
+Cell[10346, 273, 452, 10, 26, "Message"],
+Cell[10801, 285, 184, 4, 34, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

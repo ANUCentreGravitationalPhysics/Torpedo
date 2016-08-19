@@ -1,0 +1,30 @@
+modematching = 0.79712
+ 
+ans = 
+ 
+  Columns 1 through 3
+
+    label              z (m)                type       
+    -----              -----                ----       
+    Laser                              0    flat mirror
+    L1                 0.380000000000000    lens       
+    EOM                0.890000000000000    flat mirror
+    Wedge              1.040000000000000    flat mirror
+    L2                 1.240000000000000    lens       
+    AOM 1205C-843      1.470000000000000    flat mirror
+    M1 - ROC=-200mm    1.670000000000000    lens       
+
+  Column 4
+
+    parameters                    
+    ----------                    
+    none:                       
+    focalLength: 0.211934156378601
+    none:                       
+    none:                       
+    focalLength: 0.137860082304527
+    none:                       
+    focalLength: 0.095000000000000
+
+
+ 
