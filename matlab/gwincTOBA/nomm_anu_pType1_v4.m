@@ -17,7 +17,7 @@ load(['../../mathematica/torpedocross/ComplexV9WL/TorpedoV9' fileNameDesignator 
 %% Do some house keeping
 
 % Set the default filename of the saved figures and otput parameters
-systemFilename.base = ['anuTobaPrototype0p6m_AluBar_' fileNameDesignator 'Sus_MinusK1nm'];
+systemFilename.base = ['anuTobaPrototype0p6m_AluBar_' fileNameDesignator '_Sus_T240'];
 datum = datestr(now,'yyyymmdd');
 %torsionDir = '/Users/slagmolen/Documents/ANU-Torsion/matlab/gwincTOBA';
 %cd(torsionDir);
