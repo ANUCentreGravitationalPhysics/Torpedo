@@ -90,7 +90,7 @@ end
 %% Saving the data structure into a .mat file
 if SaveStructure
     Experiment = TOBAV9SimData;
-    disp(['saving TorpedoV9' fileNameDesignator '.mat']);
+    disp(['saving TorpedoV9_' fileNameDesignator '.mat']);
     save(['TorpedoV9_' fileNameDesignator '.mat'],'Experiment');
 end
 

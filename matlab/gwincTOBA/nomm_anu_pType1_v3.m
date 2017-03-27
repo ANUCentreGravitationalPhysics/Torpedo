@@ -8,6 +8,7 @@ clear all;
 % fileNameDesignator = '';                            % Original with f0 = 33mHz
  fileNameDesignator = 'Q1e6';                            % Original with f0 = 33mHz, FS
  fileNameDesignator = 'Tungsten2um';        % Original with f0 = 16 mHz
+ fileNameDesignator = '_Tungsten_measuredInertia';        % Original with f0 = 16 mHz
 
 
 
@@ -15,10 +16,10 @@ load(['../../mathematica/torpedocross/ComplexV9WL/TorpedoV9' fileNameDesignator 
 
 %f_LOLO = 0.003;
 %f_HIHI = 512/10;
-f_LOLO = Experiament.Freq(1);
-f_HIHI = Experiament.Freq(end);
+f_LOLO = Experiment.Freq(1);
+f_HIHI = Experiment.Freq(end);
 
-% Set the default filename of the saved figuees and otput parameters
+% Set the default filename of the saved figures and otput parameters
 systemFilename.base = ['anuTobaPrototype0p6m_AluBar_' fileNameDesignator 'Sus_MinusK1nm'];
 datum = datestr(now,'yyyymmdd');
 %torsionDir = '/Users/slagmolen/Documents/ANU-Torsion/matlab/gwincTOBA';
@@ -57,7 +58,7 @@ end
 ifo = TOBAModel(Experiment);
 
 %% Reset Frequency Vector
-%ifo.frequencyGrid = Experiament.Freq;
+%ifo.frequencyGrid = Experiment.Freq;
 
 
 %% --  Small Design mods ---
@@ -80,16 +81,16 @@ ifo = TOBAModel(Experiment);
 
   
 %% Torpedo Transfer Function Vectors
-ifo.Suspension.hForce = 0.25*ifo.Bar.Length^2 .* (Experiament.Bar(1).Yaw.ForceX.^2 - Experiament.Bar(2).Yaw.ForceY.^2)';
+ifo.Suspension.hForce = 0.25*ifo.Bar.Length^2 .* (Experiment.Bar(1).Yaw.ForceX.^2 - Experiment.Bar(2).Yaw.ForceY.^2)';
 ifo.Suspension.vForce = [];
 
 % Transfer Fucntion from Suspension Point to Differential Yaw, summed over
 % X, Y and Z
 ifo.Suspension.hTable = 0.5*ifo.Bar.Length .* ...
                         sqrt( ...
-                        (Experiament.Bar(1).Yaw.MotionInX - Experiament.Bar(2).Yaw.MotionInY).^2 + ...;
-                        (Experiament.Bar(1).Yaw.MotionInY - Experiament.Bar(2).Yaw.MotionInX).^2 + ...;
-                        (Experiament.Bar(1).Yaw.MotionInZ - Experiament.Bar(2).Yaw.MotionInZ).^2 ...
+                        (Experiment.Bar(1).Yaw.MotionInX - Experiment.Bar(2).Yaw.MotionInY).^2 + ...;
+                        (Experiment.Bar(1).Yaw.MotionInY - Experiment.Bar(2).Yaw.MotionInX).^2 + ...;
+                        (Experiment.Bar(1).Yaw.MotionInZ - Experiment.Bar(2).Yaw.MotionInZ).^2 ...
                         )';
 ifo.Suspension.vTable = [];
 
@@ -110,7 +111,7 @@ ifo.Suspension.vTable = [];
   ifo.Materials.Aluminium.c2  = 1/ifo.Materials.Aluminium.c2;          % at =120K, Coeff of freq depend. term for bulk mechanical loss, (ref 19)
 
     
-  ifo.Bar.Suspension.Material   = 'Silica';            % 'Silicon', 'Silica', 'C70Steel', 'Niobium', 'Tungsten'
+  ifo.Bar.Suspension.Material   = 'Tungsten';            % 'Silicon', 'Silica', 'C70Steel', 'Niobium', 'Tungsten'
                                                         % aLIGO fibers are 0.4mm in the centre and 0.6mm at the ends
   ifo.Bar.Suspension.SafetyFactor = 1.0;
   ifo.Bar.Suspension.dyaw1      = 22.5e-3;                % suspension wire separation at the suspension point
