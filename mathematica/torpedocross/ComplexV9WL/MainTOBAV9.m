@@ -21,18 +21,21 @@ SaveFigure = 0;
 %% Run the Mathmatica Script to generate transfer functions
 % fileNameDesignator = 'Tungsten2um';
 fileNameDesignator = 'FusedSilica2um';
+fileNameDesignator = 'Tungsten_measuredInertia';
 
-TOBAV9SimData = TOBALoadValsV9(['SweepValuesUsedRe' fileNameDesignator '.dat'], ...
-                               ['SweepValuesUsedIm' fileNameDesignator '.dat']);
+
+%%
+TOBAV9SimData = TOBALoadValsV9(['SweepValuesUsedRe.dat'], ...
+                               ['SweepValuesUsedIm.dat']);
 TOBAV9SimData.Freq = dlmread('FreqSweep.dat');
 
 % The Bar 1 & Bar 2 Trans are complex but saved in two files 
-Bar1TransRe = dlmread(['SweepBar1Re' fileNameDesignator '.dat']);
-Bar1TransIm = dlmread(['SweepBar1Im'  fileNameDesignator '.dat']);
+Bar1TransRe = dlmread(['SweepBar1Re'  '.dat']);
+Bar1TransIm = dlmread(['SweepBar1Im'   '.dat']);
 Bar1Trans = Bar1TransRe + 1i.*Bar1TransIm;
 
-Bar2TransRe = dlmread(['SweepBar2Re' fileNameDesignator '.dat']);
-Bar2TransIm = dlmread(['SweepBar2Im' fileNameDesignator '.dat']);
+Bar2TransRe = dlmread(['SweepBar2Re'  '.dat']);
+Bar2TransIm = dlmread(['SweepBar2Im'  '.dat']);
 Bar2Trans = Bar2TransRe + 1i.*Bar2TransIm;
 
 
@@ -86,9 +89,9 @@ end
 
 %% Saving the data structure into a .mat file
 if SaveStructure
-    Experiament = TOBAV9SimData;
+    Experiment = TOBAV9SimData;
     disp(['saving TorpedoV9' fileNameDesignator '.mat']);
-    save(['TorpedoV9' fileNameDesignator '.mat'],'Experiament');
+    save(['TorpedoV9_' fileNameDesignator '.mat'],'Experiment');
 end
 
 %% Plotting

@@ -54,7 +54,7 @@ if save_figure
 end
 
 %% Load IFO model
-ifo = TOBAModel(Experiament);
+ifo = TOBAModel(Experiment);
 
 %% Reset Frequency Vector
 %ifo.frequencyGrid = Experiament.Freq;
