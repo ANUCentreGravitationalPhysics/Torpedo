@@ -24,13 +24,6 @@ function n = subtoba(f, ifo)
   % and vertical to beamline coupling angle
   theta = ifo.Suspension.VHCoupling.theta;
   
-  % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  % currently no different for a dumbell or straight beam
-  if ifo.Bar.Dumbbell
-      disp([]); % do nothing
-  else
-      disp([]); % donothing
-  end      
   
       Ibar = pi*ifo.Bar.Radius^4 / 4;    % second moment of inertia of the 
                                          % bar beam at the centre
@@ -52,9 +45,9 @@ function n = subtoba(f, ifo)
   % transfer function from the force on the TM to TM motion
   % the factor of 1e6 is the amplitude^2 cross coupling (BS)
   % torque = Force * length, angle = x / length
-  % Xbar0 - the fundamental mode has a 1000 CMMR
+  % Xbar0 - the fundamental mode has a 100 CMMR
   % Xbar1 - the first order mode has a direct differential coupling
-  hForce  = Xbar0/1e3 + Xbar1;
+  hForce  = Xbar0/1e2 + Xbar1;
   vForce = zeros(size(w));
   
   % convert to beam line motion
@@ -63,9 +56,8 @@ function n = subtoba(f, ifo)
   dxdF = hForce + theta^2 * vForce;
 
   % thermal noise (m^2/Hz) for one suspension
-  w = 2*pi*f;
   n = 4 * kB * Temp * abs(imag(dxdF)) ./ w;
   
-  n = 4*n / Lcav^2;
+  n = 2*n / Lcav^2;
 end
 

@@ -237,24 +237,35 @@ if (fig ~= 0)
   
   end
 
-  figH = figure('units','normalized','outerposition',[0 0 1 1]);
+%   figH = figure('units','normalized','outerposition',[0 0 1 1]);
+%   hndls = loglog(f,sqrt(y1),'-',...         % Quantum Unification  
+%                  f,sqrt(y8),'--',...        % Mirror TE
+%                  f,sqrt(y10),'-',...        % Seismic                 
+%                  f,sqrt(y9),'-',...         % Seismic Gravity Gradients                 
+%                  f,sqrt(y13),'-', ...       % Atmospheric gravity gradient
+%                  f,sqrt(y15),'--',...        % Atmospheric GG dueto windspeed
+%                  f,sqrt(y3),'-',...         % Suspension thermal
+%                  f,sqrt(y12),'-',...        % Toba brownian
+%                  f,sqrt(y6),'-',...         % Coating Brownian
+%                  f,sqrt(y11),'--',...       % Coating thermooptic
+%                  f,sqrt(y5),'--',...        % Substrate brownian
+%                  f,sqrt(ys),'k-');%, ...       % Total Noise
+%   %               f,sqrt(y14),'--',...        % Laser Frequency (not Unwanted Gas)
+%   %               C70SteelWires.Freq, sqrt(C70SteelWires.SuspThermal), '--', 'Color', [1.0 0.2 0.1]);         
+%   %     oligo(:,1), oligo(:,4),'k--');
+%   set(hndls(1:(end)),'LineWidth',4);
+%   %set(hndls(13),'LineWidth',1.5);
+
+  figH = figure('units','normalized','outerposition',[0 0 0.5 0.6]);
   hndls = loglog(f,sqrt(y1),'-',...         % Quantum Unification  
-                 f,sqrt(y8),'--',...        % Mirror TE
                  f,sqrt(y10),'-',...        % Seismic                 
                  f,sqrt(y9),'-',...         % Seismic Gravity Gradients                 
-                 f,sqrt(y13),'-', ...     % Atmospheric gravity gradient
+                 f,sqrt(y13),'-', ...       % Atmospheric gravity gradient
                  f,sqrt(y15),'--',...        % Atmospheric GG dueto windspeed
                  f,sqrt(y3),'-',...         % Suspension thermal
                  f,sqrt(y12),'-',...        % Toba brownian
-                 f,sqrt(y6),'-',...         % Coating Brownian
-                 f,sqrt(y11),'--',...       % Coating thermooptic
-                 f,sqrt(y5),'--',...        % Substrate brownian
                  f,sqrt(ys),'k-');%, ...       % Total Noise
-  %               f,sqrt(y14),'--',...        % Laser Frequency (not Unwanted Gas)
-  %               C70SteelWires.Freq, sqrt(C70SteelWires.SuspThermal), '--', 'Color', [1.0 0.2 0.1]);         
-  %     oligo(:,1), oligo(:,4),'k--');
   set(hndls(1:(end)),'LineWidth',4);
-  %set(hndls(13),'LineWidth',1.5);
   
   if ifo.Seismic.Omicron == 1,
       seismicNN = ['Seismic Newtonian Noise']
@@ -272,29 +283,25 @@ if (fig ~= 0)
   legpower = [num2str(ifo.Laser.Power*1000,'%3.1f') ' mW'];
   set(gca,'FontSize',16)
   legname= legend('Quantum Vacuum',...
-         'Mirror Substrate TE',...
          ['Seismic (', ifo.Seismic.isolationComment, ')'],...
          seismicNN, ...
          atmosphericNN, ...
          'Advected Newtonian Noise, \deltaTs',...
          ['Suspension Thermal (',ifo.Bar.Suspension.Material,', ',num2str(ifo.Suspension.Temp),'K)'],...
          ['Bar Thermal (',ifo.Bar.Substrate.Material,', first 2 modes)'],...
-         'Mirror Coating Brownian', ... 
-         'Mirror Coating Thermo-optic   ',...
-         'Mirror Substrate Brownian',...
          'Total noise',...
          'Location','NorthEast');
         %'Suspension thermal (Steel)', ...
-  set(legname,'FontSize',16)
+  set(legname,'FontSize',12)
   xlabel('Frequency [Hz]','FontSize',16);
   ylabel('Strain [1/\surdHz]','FontSize',16);
   grid
   grid minor
-  axis([flo fhi 1e-21 1e-12]);
+  axis([flo fhi 1e-17 1e-12]);
   title(['TOBA Noise Curve: P_{in} = ' legpower],'FontSize',16)  
   %IDfig('airwolf')
   clrtable=[0.7   0.0   0.9 % 1
-            1.0   0.5   0.5 % 2
+  %          1.0   0.5   0.5 % 2
             0.6   0.4   0.0 % 3
             0.0   0.8   0.0 % 4
             0.6   0.2   0.2 % 5
@@ -302,9 +309,9 @@ if (fig ~= 0)
             0.3   0.3   1.0 % 6
             0.1   0.4   0.5 % 7
             1.0   0.2   0.1 % 8
-            0.0   1.0   0.9 % 9
-            1.0   0.7   0.0 % 10
-            0.2   0.2   0.8 % 11
+  %          0.0   1.0   0.9 % 9
+  %          1.0   0.7   0.0 % 10
+  %          0.2   0.2   0.8 % 11
             0.0   0.0   0.0]; % 12
           
   for gag = 1:(length(hndls) - 1)

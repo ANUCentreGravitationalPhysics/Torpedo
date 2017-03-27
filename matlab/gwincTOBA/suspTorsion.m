@@ -38,6 +38,7 @@ function [hForce, vForce, hTable, vTable] = suspTorsion(f, ifo)
   % Wire Pendulum:  
   wp = sqrt(g / (Ltor + dpitch));    % pendulum frequency in rad
                                                         % with 3/4 wire length in rad
+ 
 
   wpit = sqrt(mb*g*dpitch / ifo.Bar.Ipit);            % fundamental pitch resonance, rad/s
                                                         

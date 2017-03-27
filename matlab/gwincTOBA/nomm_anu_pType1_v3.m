@@ -57,6 +57,7 @@ end
 f_LOLO = Experiment.Freq(1);
 f_HIHI = Experiment.Freq(end);
 
+% Load the Mathematica Model into the ifo place holdr
 ifo = TOBAModel(Experiment);
 
 %% Reset Frequency Vector
@@ -68,10 +69,9 @@ ifo = TOBAModel(Experiment);
   ifo.Laser.Power                        = 0.003; % W;
   ifo.Laser.Wavelength                   = 1064e-9; % m;
 
-  % Bar and Suspension Material
 
 %% Bar mass of ~10kg
-  ifo.Bar.Suspension.Length     = 0.6;  % m
+  ifo.Bar.Suspension.Length     = Experiment.Wires.Length; % 0.6;  % m
   ifo.Bar.Length                = 0.6; % m, the ANU tanks have a 1.508 m internal diameter
   ifo.Bar.Radius                = 0.06/2; % m
 
@@ -116,7 +116,7 @@ ifo.Suspension.vTable = [];
   ifo.Bar.Suspension.Material   = 'Tungsten';            % 'Silicon', 'Silica', 'C70Steel', 'Niobium', 'Tungsten'
                                                         % aLIGO fibers are 0.4mm in the centre and 0.6mm at the ends
   ifo.Bar.Suspension.SafetyFactor = 1.0;
-  ifo.Bar.Suspension.dyaw1      = 22.5e-3;                % suspension wire separation at the suspension point
+  ifo.Bar.Suspension.dyaw1      = Experiment.Bar(1).TopSeperation(1,1);22.5e-3;                % suspension wire separation at the suspension point
   ifo.Bar.Suspension.dyaw2      = ifo.Bar.Suspension.dyaw1;                % suspension wire separation at the bar suspension point
   ifo.Bar.Suspension.dpitch     = 86e-3;                 % suspension wire seperation point above COM
   ifo.Bar.Suspension.Length     = ifo.Bar.Suspension.Length + ifo.Bar.Suspension.dpitch;
@@ -368,8 +368,10 @@ disp(' ');
 % 
 % set(ht, 'FontSize', 16, 'FontWeight', 'Bold');
 
-diary off;
-disp([' ... saving ' systemFilename.details '.txt']);
+if save_figure
+    diary off;
+    disp([' ... saving ' systemFilename.details '.txt']);
+end
 
 %%
 out = torsionForce(ifo, nnn);

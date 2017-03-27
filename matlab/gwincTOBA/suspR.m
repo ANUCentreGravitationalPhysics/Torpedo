@@ -4,6 +4,7 @@
 %  the general case calls the suspTYPE function to generate TFs
 
 function noise = suspR(f, ifo)
+  w = 2*pi*f;
 
   % Assign Physical Constants
   kB = ifo.Constants.kB;
@@ -37,7 +38,6 @@ function noise = suspR(f, ifo)
 %  dtdT = hTorque + vTorque;
 
   % thermal noise (rad^2/Hz) for each bar rotation suspension
-  w = 2*pi*f;
   alphaX = -4 * kB * Temp * (imag(dtxdT)) ./ w; % [rad^2]
   alphaY = -4 * kB * Temp * (imag(dtydT)) ./ w; % [rad^2]
 
@@ -52,9 +52,7 @@ function noise = suspR(f, ifo)
   legend('displ - [m]', 'angle - [rad]', 'imag("hTorque")');
   ylabel('amplitude [-/rtHz]');
   
-  % turn into gravitational wave strain; 4 masses
-  % noise = 4 * noise / ifo.Infrastructure.Length.^2;
-  % turn into gravitational wave strain; 2 masses
+  % turn into gravitational wave strain
   noise = noise / ifo.Infrastructure.Length.^2;
 
 

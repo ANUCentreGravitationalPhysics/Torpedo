@@ -193,7 +193,7 @@ function [nx, np] = MultiSAS(f, ifo)
   w         = 2*pi*f;
   g         = ifo.Constants.g;
 %  grnd       = ground(ifo.Seismic,f); % local ground motion (ifo.Seismic.site!)
-  noisefloor = T240_noise_spec_ASD(f)./100;
+  noisefloor = T240_noise_spec_ASD(f);
 %  noisefloor = 3 .* anu_seismometer(f);
     
   % Hor. TF
