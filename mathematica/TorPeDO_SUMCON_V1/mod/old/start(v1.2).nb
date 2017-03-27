@@ -1,0 +1,430 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     11926,        421]
+NotebookOptionsPosition[      8479,        295]
+NotebookOutlinePosition[      8868,        312]
+CellTagsIndexPosition[      8825,        309]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+
+SUMCON
+Starting Module\
+\>", "Subtitle",
+ InitializationCell->True,
+ CellChangeTimes->{{3.567267385407502*^9, 3.5672674123050413`*^9}, {
+  3.571475028359763*^9, 3.5714750446196933`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Alart OFF", "Section",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714760222636113`*^9, 3.571476024471738*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Spell checking off", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5093582266123266`*^9, 3.509358235441942*^9}, {
+  3.510908785327453*^9, 3.510908786812538*^9}, {3.512712672876814*^9, 
+  3.51271269337525*^9}, {3.5224870223407726`*^9, 3.522487023371832*^9}, {
+  3.571476014517168*^9, 3.5714760298840475`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Disable spell-checking. There are so many variables with similar names that \
+it' s useless.\
+\>", "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ InitializationCell->True,
+ CellChangeTimes->{{3.5109082158268795`*^9, 3.5109082167409315`*^9}, 
+   3.512712667838005*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Off", "[", 
+   RowBox[{
+    RowBox[{"General", "::", "spell"}], ",", 
+    RowBox[{"General", "::", "spell1"}]}], "]"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ InitializationCell->True,
+ CellChangeTimes->{{3.5106245299962707`*^9, 3.510624543927095*^9}, {
+   3.5106247451362486`*^9, 3.5106247454950495`*^9}, {3.5106377976799808`*^9, 
+   3.5106377985379825`*^9}, 3.510958382947708*^9, 3.512712667838005*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Disable LinearSolve alart", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571475940717947*^9, 3.5714759418480115`*^9}, {
+  3.5714759879626493`*^9, 3.5714759955240817`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Disable the LinerSolve alart.", "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ InitializationCell->True,
+ CellChangeTimes->{{3.511418292811921*^9, 3.5114183319367895`*^9}, {
+  3.5114185384811525`*^9, 3.5114185527395773`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Off", "[", 
+   RowBox[{"LinearSolve", "::", "luc"}], "]"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ InitializationCell->True,
+ CellChangeTimes->{{3.5110035674345737`*^9, 3.5110035736277847`*^9}, {
+  3.5114183319367895`*^9, 3.511418334307994*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Error", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571492134542181*^9, 3.5714921441837325`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Off", "[", 
+  RowBox[{"Syntax", "::", "stresc"}], "]"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714921531522455`*^9, 3.57149215830254*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Status Window Open", "Section",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571476135463086*^9, 3.5714761570263195`*^9}, {
+  3.571476188952145*^9, 3.571476201844883*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[" Import module", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714761419454565`*^9, 3.571476148366824*^9}, {
+  3.571476194171444*^9, 3.5714761981096687`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "\"\<mod/StatusWindow.m\>\""}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571476170444087*^9, 3.5714761851319265`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Open Window", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714762152746506`*^9, 3.571476218257821*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mod$OpenStatus", ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571476220970977*^9, 3.5714762261552734`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Import Packages", "Section",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714762561179867`*^9, 3.571476258827142*^9}, {
+  3.5714913229357595`*^9, 3.571491324470847*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Plot legend", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571488955427346*^9, 3.5714889577694798`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "mod$WriteStatus", "[", 
+   "\"\<Importing the mathematica package PlotLegends`...\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "\"\<PlotLegends`\>\""}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714889519271455`*^9, 3.571489026538413*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Unit system", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714827262380567`*^9, 3.571482733138451*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "mod$WriteStatus", "[", 
+   "\"\<Importing unit system and physical constants...\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "\"\<mod/Units.m\>\""}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571476170444087*^9, 3.5714761851319265`*^9}, {
+  3.5714827372246847`*^9, 3.571482770751603*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3D Graphics", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571482905260296*^9, 3.571482915866903*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "mod$WriteStatus", "[", 
+   "\"\<Importing 3D graphics module for eigenmode plot...\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "\"\<mod/Graphics3D.m\>\""}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571491030982061*^9, 3.571491054693417*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Utility package", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.57149120580506*^9, 3.571491217188711*^9}, {
+  3.5714912532157717`*^9, 3.5714912554479*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "mod$WriteStatus", "[", 
+   "\"\<Importing vibration isolation system utility package...\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "\"\<mod/visUtil.m\>\""}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714912278383207`*^9, 3.571491247853465*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Utility package", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.57149120580506*^9, 3.571491217188711*^9}, {
+  3.5714912532157717`*^9, 3.5714912554479*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "mod$WriteStatus", "[", "\"\<Importing user interface package...\>\"", 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "\"\<mod/Interface.m\>\""}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714912278383207`*^9, 3.5714912810453634`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finish Message", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714913859723654`*^9, 3.5714913916616907`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "mod$WriteStatus", "[", "\"\<Packages have been imported.\>\"", "]"}], 
+  ";"}]], "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Open SUMCON Start Menu", "Section",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714912939471016`*^9, 3.5714912959062138`*^9}, {
+  3.571491335683489*^9, 3.571491343013908*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Open SUMCON", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714914021032877`*^9, 3.5714914055164833`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mod$WriteStatus", "[", "\"\<Now opening SUMCON...\>\"", "]"}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714913505283375`*^9, 3.5714914153360443`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mod$StartSUMCON", ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571491422688465*^9, 3.5714914282567835`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Close", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714914335340853`*^9, 3.571491434120119*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mod$CloseStatus", ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714914353481894`*^9, 3.5714914445827174`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowSize->{764, 534},
+WindowMargins->{{209, Automatic}, {Automatic, 2}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (2008\:5e7412\:670810\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 197, 7, 105, "Subtitle",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[789, 33, 123, 2, 71, "Section",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[937, 39, 334, 5, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[1296, 48, 292, 7, 29, "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ InitializationCell->True],
+Cell[1591, 57, 492, 11, 52, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2132, 74, 198, 3, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[2355, 81, 246, 4, 29, "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ InitializationCell->True],
+Cell[2604, 87, 333, 8, 52, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2986, 101, 132, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[3121, 105, 184, 4, 31, "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3354, 115, 181, 3, 71, "Section",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[3560, 122, 185, 3, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[3748, 127, 165, 3, 31, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3950, 135, 131, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[4084, 139, 152, 3, 31, "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4285, 148, 180, 3, 71, "Section",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[4490, 155, 131, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[4624, 159, 314, 8, 52, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4975, 172, 131, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[5109, 176, 362, 9, 52, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5508, 190, 129, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[5640, 194, 317, 8, 52, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5994, 207, 181, 3, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[6178, 212, 321, 8, 52, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6536, 225, 181, 3, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[6720, 230, 302, 7, 52, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7059, 242, 136, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[7198, 246, 154, 5, 31, "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7401, 257, 187, 3, 71, "Section",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[7613, 264, 133, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[7749, 268, 214, 5, 31, "Input",
+ InitializationCell->True],
+Cell[7966, 275, 153, 3, 31, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8156, 283, 125, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[8284, 287, 155, 3, 31, "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

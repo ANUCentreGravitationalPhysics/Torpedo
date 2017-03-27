@@ -3,6 +3,7 @@
 close all;
 clear all;
 
+%% Set Mathematica Model Name
 % fileNameDesignator = 'FusedSilica2um';
 % fileNameDesignator = 'Tungsten2um8p5mm';   % Original with f0 = 16 mHz
 % fileNameDesignator = '';                            % Original with f0 = 33mHz
@@ -10,14 +11,10 @@ clear all;
  fileNameDesignator = 'Tungsten2um';        % Original with f0 = 16 mHz
  fileNameDesignator = '_Tungsten_measuredInertia';        % Original with f0 = 16 mHz
 
-
-
+ % Load Mathematica Model
 load(['../../mathematica/torpedocross/ComplexV9WL/TorpedoV9' fileNameDesignator '.mat']);
 
-%f_LOLO = 0.003;
-%f_HIHI = 512/10;
-f_LOLO = Experiment.Freq(1);
-f_HIHI = Experiment.Freq(end);
+%% Do some house keeping
 
 % Set the default filename of the saved figures and otput parameters
 systemFilename.base = ['anuTobaPrototype0p6m_AluBar_' fileNameDesignator 'Sus_MinusK1nm'];
@@ -55,6 +52,11 @@ if save_figure
 end
 
 %% Load IFO model
+%f_LOLO = 0.003;
+%f_HIHI = 512/10;
+f_LOLO = Experiment.Freq(1);
+f_HIHI = Experiment.Freq(end);
+
 ifo = TOBAModel(Experiment);
 
 %% Reset Frequency Vector

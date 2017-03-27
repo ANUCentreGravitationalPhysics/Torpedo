@@ -1,0 +1,23 @@
+
+------------------------------------------------------------------------------
+                               Seismic Spectrum
+------------------------------------------------------------------------------
+
+*Meaning of Each Column
+ First  column: frequency [Hz]
+ Second column: amplitude spectrum density of seismic noies [m/rtHz]
+
+
+*File Names
+
+ - kamiokaNoisy
+    Seismic spectrum in Kamioka Mine measured with a geophone (CMG)
+    on a stormy day (070215)
+
+ - kamiokaQuiet
+    Seismic spectrum in Kamioka Mine measured with a geophone (CMG)
+    on a fine day (070213)
+
+ - CLIOshieldHoriz, CLIO shield Vert
+    Vibration spectrum of the radiation shield in a CLIO cryostat
+    measured with an interferometric accelerometer

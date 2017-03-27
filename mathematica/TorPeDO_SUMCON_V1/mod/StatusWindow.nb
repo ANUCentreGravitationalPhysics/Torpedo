@@ -1,0 +1,374 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     12696,        364]
+NotebookOptionsPosition[     11094,        303]
+NotebookOutlinePosition[     11504,        321]
+CellTagsIndexPosition[     11461,        318]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+
+SUMCON
+Status Window Module\
+\>", "Subtitle",
+ InitializationCell->True,
+ CellChangeTimes->{{3.567267385407502*^9, 3.5672674123050413`*^9}, {
+  3.571475028359763*^9, 3.5714750446196933`*^9}, {3.5714750812617893`*^9, 
+  3.5714750988257933`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Status Window", "Section",
+ InitializationCell->True,
+ CellChangeTimes->{{3.567267260762373*^9, 3.5672672628784943`*^9}, {
+  3.567267513410824*^9, 3.567267558324393*^9}, {3.5714750549182825`*^9, 
+  3.571475059862565*^9}, {3.571475108694358*^9, 3.5714751136416407`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Log Module", "Subsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.570773598719762*^9, 3.5707736005858684`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Open", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5707731154871225`*^9, 3.570773117869259*^9}, {
+  3.5714751535109215`*^9, 3.5714751540239506`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mod$OpenStatus", ":=", 
+   RowBox[{"(", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"nb$status", "[", 
+         RowBox[{"[", "0", "]"}], "]"}], "=!=", "Symbol"}], ",", 
+       RowBox[{"NotebookClose", "[", "nb$status", "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"nb$status", "=", "\[IndentingNewLine]", 
+      RowBox[{"NotebookPut", "[", 
+       RowBox[{"Notebook", "[", 
+        RowBox[{
+         RowBox[{"{", "}"}], ",", 
+         RowBox[{"WindowSize", "->", 
+          RowBox[{"{", 
+           RowBox[{"500", ",", "300"}], "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"WindowMargins", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"Automatic", ",", "10"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"Automatic", ",", "10"}], "}"}]}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"WindowTitle", "\[Rule]", "\"\<Status\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Editable", "\[Rule]", "False"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Selectable", "\[Rule]", "True"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"WindowFrame", "\[Rule]", "\"\<ModelessDialog\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"WindowFrameElements", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<CloseBox\>\"", ",", "\"\<ResizeArea\>\"", ",", 
+            "\"\<ZoomBox\>\"", ",", "\"\<MinimizeBox\>\""}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"WindowElements", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<VerticalScrollBar\>\"", ",", "\"\<HorizontalScrollBar\>\""}], 
+           "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"ShowCellBracket", "\[Rule]", "False"}]}], "\n", "\t", "]"}],
+        "]"}]}], ";"}], "\[IndentingNewLine]", ")"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5707728533671303`*^9, 3.5707728607205505`*^9}, {
+   3.57077289444948*^9, 3.570772952476799*^9}, {3.5707730070769215`*^9, 
+   3.5707730246599274`*^9}, {3.5707732616294813`*^9, 
+   3.5707733148555255`*^9}, {3.570773473925624*^9, 3.57077348609132*^9}, {
+   3.571417526579852*^9, 3.571417585575227*^9}, {3.5714190563593507`*^9, 
+   3.571419058991501*^9}, 3.571419341642668*^9, 3.571419482709737*^9, {
+   3.5714196047587175`*^9, 3.5714196055097604`*^9}, {3.571420870772129*^9, 
+   3.5714208963205905`*^9}, {3.5714209764671745`*^9, 3.571421020743707*^9}, {
+   3.5714210511884484`*^9, 3.5714210695785007`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"mod$OpenStatus", "::", "usage"}], "=", 
+   "\"\<Open a notebook to write status.\>\""}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714751761322155`*^9, 3.571475233958523*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Close", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714751486726446`*^9, 3.5714751493996863`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mod$CloseStatus", ":=", 
+   RowBox[{"(", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"NotebookClose", "[", "nb$status", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Clear", "[", "nb$status", "]"}], ";"}], "\[IndentingNewLine]", 
+    ")"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.5714194816696773`*^9, {3.5714195980083313`*^9, 3.5714196670092783`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"mod$CloseStatus", "::", "usage"}], "=", 
+   "\"\<Close status window.\>\""}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714752458282013`*^9, 3.571475254504698*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Write", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.570773241872351*^9, 3.570773243164425*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"twodigits", "[", "i_", "]"}], ":=", 
+   RowBox[{"ToString", "[", 
+    RowBox[{"PaddedForm", "[", 
+     RowBox[{
+      RowBox[{"IntegerPart", "[", 
+       RowBox[{"Abs", "[", "i", "]"}], "]"}], ",", "2", ",", 
+      RowBox[{"NumberPadding", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<0\>\"", ",", "\"\<0\>\""}], "}"}]}], ",", 
+      RowBox[{"NumberSigns", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<\>\"", ",", "\"\<\>\""}], "}"}]}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hhmmss", "[", "d_List", "]"}], ":=", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"twodigits", "[", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "4", "]"}], "]"}], "]"}], "<>", "\"\<:\>\"", "<>", 
+     RowBox[{"twodigits", "[", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "5", "]"}], "]"}], "]"}], "<>", "\"\<:\>\"", "<>", 
+     RowBox[{"twodigits", "[", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "6", "]"}], "]"}], "]"}]}], ")"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571417910738825*^9, 3.5714179623017745`*^9}, {
+  3.5714181436981497`*^9, 3.5714181799622235`*^9}, {3.57141901245984*^9, 
+  3.5714190132258835`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"mod$WriteStatus", "[", "t_String", "]"}], " ", ":=", " ", 
+   RowBox[{"If", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"nb$status", "[", 
+       RowBox[{"[", "0", "]"}], "]"}], "=!=", "Symbol"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"statustime", " ", "=", " ", 
+       RowBox[{"DateList", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"SelectionMove", "[", 
+       RowBox[{"nb$status", ",", "After", ",", "Notebook"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"SetOptions", "[", 
+       RowBox[{"nb$status", ",", 
+        RowBox[{"Editable", "\[Rule]", "True"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", "\[IndentingNewLine]", 
+       RowBox[{"nb$status", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"hhmmss", "[", "statustime", "]"}], "<>", "\"\< : \>\"", "<>",
+            "t"}], ",", "\"\<Text\>\""}], "]"}]}], "\n", "\t", "]"}], ";", 
+      "\n", "\t", 
+      RowBox[{"SetOptions", "[", 
+       RowBox[{"nb$status", ",", 
+        RowBox[{"Editable", "\[Rule]", "False"}]}], "]"}], ";"}]}], "\n", 
+    "]"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5707732450225315`*^9, 3.5707732474916725`*^9}, {
+   3.570773323360012*^9, 3.5707733628052683`*^9}, 3.5707734370505147`*^9, 
+   3.5714176061854057`*^9, {3.571418229172038*^9, 3.5714182527443867`*^9}, {
+   3.5714183062564473`*^9, 3.5714183113027363`*^9}, {3.571419130864612*^9, 
+   3.571419155550024*^9}, {3.571419252917593*^9, 3.571419256675808*^9}, 
+   3.5714211893933535`*^9, {3.5714213004887075`*^9, 3.5714213077411222`*^9}, {
+   3.571421356408906*^9, 3.5714213573329587`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"mod$WriteStatus", "::", "usage"}], "=", 
+   "\"\<mod$WriteStatus[t] write down a message t on the status notebook with \
+a time stamp\>\""}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714752730137568`*^9, 3.5714753639639587`*^9}, {
+   3.571475439410274*^9, 3.5714754417514076`*^9}, 3.571475491389247*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Error", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714214701964145`*^9, 3.571421470903455*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"mod$WriteError", "[", "t_String", "]"}], " ", ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Beep", "[", "]"}], ";", "\[IndentingNewLine]", " ", 
+     RowBox[{"If", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"nb$status", "[", 
+         RowBox[{"[", "0", "]"}], "]"}], "=!=", "Symbol"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"statustime", " ", "=", " ", 
+         RowBox[{"DateList", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"SelectionMove", "[", 
+         RowBox[{"nb$status", ",", "After", ",", "Notebook"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"SetOptions", "[", 
+         RowBox[{"nb$status", ",", 
+          RowBox[{"Editable", "\[Rule]", "True"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"NotebookWrite", "[", "\[IndentingNewLine]", 
+         RowBox[{"nb$status", ",", "\[IndentingNewLine]", 
+          RowBox[{"Cell", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"hhmmss", "[", "statustime", "]"}], "<>", "\"\< : \>\"", 
+             "<>", "\"\<[Error] \>\"", "<>", "t"}], ",", "\"\<Text\>\"", ",", 
+            RowBox[{"FontColor", "\[Rule]", "Red"}]}], "]"}]}], "\n", "\t", 
+         "]"}], ";", "\n", "\t", 
+        RowBox[{"SetOptions", "[", 
+         RowBox[{"nb$status", ",", 
+          RowBox[{"Editable", "\[Rule]", "False"}]}], "]"}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", ")"}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5714213199078183`*^9, 3.5714213710477433`*^9}, {
+  3.5714214215676327`*^9, 3.571421457900711*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"mod$WriteError", "::", "usage"}], "=", 
+   "\"\<mod$WriteError[t] makes beep and write down an error message t on the \
+status notebook by red characters.\>\""}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.571475371963416*^9, 3.571475487142004*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowSize->{864, 536},
+WindowMargins->{{45, Automatic}, {-4, Automatic}},
+ShowSelection->True,
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (2008\:5e7412\:670810\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 255, 8, 105, "Subtitle",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[847, 34, 275, 4, 71, "Section",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[1147, 42, 127, 2, 36, "Subsection",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[1299, 48, 177, 3, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[1479, 53, 2666, 57, 292, "Input",
+ InitializationCell->True],
+Cell[4148, 112, 247, 6, 31, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4432, 123, 127, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[4562, 127, 434, 11, 92, "Input",
+ InitializationCell->True],
+Cell[4999, 140, 236, 6, 31, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5272, 151, 123, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[5398, 155, 1243, 33, 72, "Input",
+ InitializationCell->True],
+Cell[6644, 190, 1798, 39, 232, "Input",
+ InitializationCell->True],
+Cell[8445, 231, 376, 8, 52, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8858, 244, 125, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[8986, 248, 1734, 40, 292, "Input",
+ InitializationCell->True],
+Cell[10723, 290, 319, 7, 72, "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

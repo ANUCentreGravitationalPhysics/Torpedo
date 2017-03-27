@@ -1,0 +1,80 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      2366,         71]
+NotebookOptionsPosition[      1997,         53]
+NotebookOutlinePosition[      2352,         69]
+CellTagsIndexPosition[      2309,         66]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["SUMCON Exective File", "Title",
+ CellChangeTimes->{{3.5672672776203375`*^9, 3.5672672895230184`*^9}, {
+  3.5672673490174212`*^9, 3.567267366230406*^9}, {3.5700363447547083`*^9, 
+  3.570036349169961*^9}}],
+
+Cell["\<\
+You can start SUMCON by execting following program by Shift + Enter.
+Make sure that module file directory \"mod\" is in the same directory where \
+this notebook exists.\
+\>", "Text",
+ CellChangeTimes->{{3.570036352401146*^9, 3.5700364396711373`*^9}, {
+  3.570039180395898*^9, 3.5700391813169503`*^9}, {3.5700399180710907`*^9, 
+  3.570039920745243*^9}, {3.570077488165977*^9, 3.570077505814986*^9}, {
+  3.570102996492481*^9, 3.5701029976155453`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "\"\<mod/start.m\>\""}]}], "Input",
+ CellChangeTimes->{{3.570036447999614*^9, 3.570036504702857*^9}, 
+   3.570096234511718*^9, {3.5701050938584433`*^9, 3.5701050944334764`*^9}, {
+   3.570127367011395*^9, 3.5701273678994455`*^9}, {3.5701658209643183`*^9, 
+   3.570165821589354*^9}, {3.5710578484737773`*^9, 3.571057861900545*^9}, {
+   3.57116676809686*^9, 3.571166794816388*^9}, {3.5712997564144316`*^9, 
+   3.5712997596306157`*^9}, {3.571341536514761*^9, 3.5713415373808107`*^9}, {
+   3.571471527067501*^9, 3.5714715280815587`*^9}, {3.57148893556421*^9, 
+   3.5714889401504717`*^9}}]
+}, Open  ]]
+},
+WindowSize->{607, 527},
+WindowMargins->{{0, Automatic}, {Automatic, 68}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (2008\:5e7412\:670810\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 209, 3, 83, "Title"],
+Cell[779, 27, 459, 8, 47, "Text"],
+Cell[1241, 37, 740, 13, 52, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

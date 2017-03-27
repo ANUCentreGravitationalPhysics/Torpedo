@@ -1,0 +1,251 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      7073,        242]
+NotebookOptionsPosition[      6268,        208]
+NotebookOutlinePosition[      6657,        225]
+CellTagsIndexPosition[      6614,        222]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+
+SUMCON
+Units and Physical Constants\
+\>", "Subtitle",
+ InitializationCell->True,
+ CellChangeTimes->{{3.567267385407502*^9, 3.5672674123050413`*^9}, {
+  3.571475028359763*^9, 3.5714750446196933`*^9}, {3.5714826061611886`*^9, 
+  3.5714826259913225`*^9}, {3.5714911351280174`*^9, 3.571491135417034*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Module", "Section",
+ InitializationCell->True,
+ CellChangeTimes->{{3.567267260762373*^9, 3.5672672628784943`*^9}, {
+  3.567267513410824*^9, 3.567267558324393*^9}, {3.5714750549182825`*^9, 
+  3.571475059862565*^9}, {3.571476043379819*^9, 3.571476044179865*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Unit System", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.567578003952859*^9, 3.567578007495061*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"kg", "=", "1.0"}], ";", 
+   RowBox[{"meter", "=", "1.0"}], ";", 
+   RowBox[{"rad", "=", "1.0"}], ";", 
+   RowBox[{"sec", "=", "1.0"}], ";", 
+   RowBox[{"Kervin", "=", "1.0"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"Basical", " ", "Set"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cm", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "2"}], ")"}]}], "meter"}]}], ";", 
+   RowBox[{"mm", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "3"}], ")"}]}], "meter"}]}], ";", " ", 
+   RowBox[{"km", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", "3", ")"}]}], "meter"}]}], ";"}], 
+  RowBox[{"(*", "Length", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"gram", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "3"}], ")"}]}], "kg"}]}], ";", " ", 
+   RowBox[{"mg", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "6"}], ")"}]}], "kg"}]}], ";"}], 
+  RowBox[{"(*", "Mass", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"deg", "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"N", "[", "Pi", "]"}], "/", "180."}], ")"}], "rad"}]}], ";", 
+   " ", 
+   RowBox[{"mrad", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "3"}], ")"}]}], "rad"}]}], ";", 
+   RowBox[{"urad", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "6"}], ")"}]}], "rad"}]}], ";"}], 
+  RowBox[{"(*", "Angle", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Hz", "=", 
+    RowBox[{"1", "/", "sec"}]}], ";", 
+   RowBox[{"mHz", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "3"}], ")"}]}], "Hz"}]}], ";", " ", 
+   RowBox[{"kHz", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", "3", ")"}]}], "Hz"}]}], ";"}], 
+  RowBox[{"(*", "Frequency", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Newton", "=", 
+    RowBox[{"kg", "*", 
+     RowBox[{"meter", "/", 
+      RowBox[{"sec", "^", 
+       RowBox[{"(", 
+        RowBox[{"-", "2"}], ")"}]}]}]}]}], ";", 
+   RowBox[{"kN", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", "3", ")"}]}], "Newton"}]}], ";", 
+   RowBox[{"mN", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "3"}], ")"}]}], "Newton"}]}], ";"}], 
+  RowBox[{"(*", "Force", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Pa", "=", 
+    RowBox[{"Newton", "/", 
+     RowBox[{"meter", "^", 
+      RowBox[{"(", "2", ")"}]}]}]}], ";", 
+   RowBox[{"MPa", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", "6", ")"}]}], "Pa"}]}], ";", 
+   RowBox[{"GPa", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", "9", ")"}]}], "Pa"}]}], ";"}], 
+  RowBox[{"(*", "Pressure", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"J", "=", 
+    RowBox[{"Newton", "*", "meter"}]}], ";", 
+   RowBox[{"kJ", "=", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"(", "3", ")"}]}], "J"}]}], ";"}], 
+  RowBox[{"(*", "Energy", "*)"}]}], "\[IndentingNewLine]"}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5675780514645762`*^9, 3.567578310694403*^9}, {
+  3.5675784132702703`*^9, 3.5675784380666885`*^9}, {3.5675784757618446`*^9, 
+  3.5675784817521873`*^9}, {3.567578515084094*^9, 3.567578521586466*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Physical Constant", "Subsubsection",
+ InitializationCell->True,
+ CellChangeTimes->{{3.518832901759117*^9, 3.518832905066323*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "=", 
+    RowBox[{"9.81", " ", "meter", "*", 
+     RowBox[{"sec", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "2"}], ")"}]}]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"local", " ", "gravity", " ", "constant"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"kB", "=", 
+    RowBox[{"1.3806503", "*", 
+     RowBox[{"10", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", "23"}], ")"}]}], " ", 
+     RowBox[{"J", "/", "Kervin"}]}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"Boltzman", " ", "constant"}], 
+   "*)"}]}], "\[IndentingNewLine]"}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.507762704553597*^9, 3.5077627272070923`*^9}, {
+   3.507763249921364*^9, 3.507763251940638*^9}, 3.507765884859458*^9, {
+   3.5078741427757235`*^9, 3.5078741430097237`*^9}, {3.5078882875472107`*^9, 
+   3.5078883798324895`*^9}, 3.510910789651633*^9, {3.5127255934829397`*^9, 
+   3.512725594387741*^9}, {3.522487166231003*^9, 3.522487224296324*^9}, {
+   3.5224872720930576`*^9, 3.522487300305671*^9}, {3.567578323091112*^9, 
+   3.567578383320557*^9}, {3.567578448787302*^9, 3.5675784504263954`*^9}, {
+   3.567578525577694*^9, 3.567578525925714*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowSize->{711, 536},
+WindowMargins->{{16, Automatic}, {47, Automatic}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (2008\:5e7412\:670810\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 311, 8, 105, "Subtitle",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[903, 34, 266, 4, 71, "Section",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[1194, 42, 129, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[1326, 46, 3509, 118, 192, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4872, 169, 135, 2, 27, "Subsubsection",
+ InitializationCell->True],
+Cell[5010, 173, 1218, 30, 72, "Input",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

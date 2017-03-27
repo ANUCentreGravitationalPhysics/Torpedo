@@ -1,0 +1,25 @@
+
+------------------------------------------------------------------------------
+                      Heat Link Spring Constant List
+------------------------------------------------------------------------------
+             Finite elemental analysis with COMSOL Multi Physics
+                        by Y. Aso  (JGW-G1000108)
+
+*Meaning of Each Column
+ First  column: frequency                         [Hz]
+ Second column: real part of spring constant      [N/m]
+ Third  column: imaginary part of spring constant [N/m]
+
+*Axes
+ x: Horizontal longitudinal axis to the heat link
+ y: Horizontal transversal axis to the heat link
+ z: Vertical axis
+
+*Heat Link Shape
+ k1: Semi-ellipse (minor radius (z) = 200mm, major radius (x) = 400 mm)
+ k2: Semi-ellipse (minor radius (z) = 300mm, major radius (x) = 400 mm)
+ k3: Semi-ellipse (minor radius (z) = 400mm, major radius (x) = 400 mm)
+ k4: U-shape (straight line length =  50mm, semicircle diameter =  50 mm)
+ k5: U-shape (straight line length = 100mm, semicircle diameter =  25 mm)
+ k6: U-shape (straight line length = 100mm, semicircle diameter =  50 mm)
+ k7: U-shape (straight line length = 100mm, semicircle diameter =  75 mm)

@@ -1,0 +1,29 @@
+reset
+set terminal wxt enhanced
+#set terminal postscript eps enhanced color solid 14
+set xlabel font "century gothic 15"
+set ylabel font "century gothic 15"
+set title font "century gothic 15"
+set logscale x
+set logscale y
+set xlabel "Frequency [Hz]"
+set ylabel "power spectrum [m/rt Hz]"
+set grid
+set xrange[0.005:500]
+set key box
+set title "From GND to TM (vertical)"
+set format y "10^{%L}"
+
+#set output "plot0622horizontal.eps"
+plot 'AyTMfromyg0622.dat' using 1:2 w l t"TypeA",\
+     'B1yTMfromyg0622.dat' using 1:2 w l t"TypeB(Bproto)",\
+     'B2yTMfromyg0622.dat' using 1:2 w l t"TypeB(BS)"
+
+#plot 'AzTMfromzg0622.dat' using 1:2 w l t"TypeA",\
+     'B1zTMfromzg0622.dat' using 1:2 w l t"TypeB(Bproto)",\
+     'B2zTMfromzg0622.dat' using 1:2 w l t"TypeB(BS)"
+
+#AzTMfromzg0622
+
+
+reset
